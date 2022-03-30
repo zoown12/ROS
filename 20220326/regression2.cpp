@@ -50,7 +50,7 @@ int main() {
     float da = 0.01;
     float db = 0.01;
     float psi = 0.1;
-    float a, a1 = 1; //임의로 찍어주는 기울기
+    float a, a1 = 1;
     float b, b1 = 1;
 
     for (int i = 0; i < 50; i++) {

@@ -15,12 +15,12 @@ float datay[20];
 float n =0;
 
 float EE(float x0, float x1, float y0, float y1) {
-	return sqrt((x0 - x1) * (x0 - x1));
+	return sqrt((x0 - x1) * (x0 - x1) + (y0 - y1) * (y0 - y1));
 }
 
 float dis(float x, float y, float a, float b)
 {
-    return abs(a * x - y + b) / sqrt(a * a + 1); 
+    return abs(a * x - y + b) / sqrt(a * a + b *b); 
 }
 
 float f(float a, float b)
@@ -47,6 +47,7 @@ int main(){
     
     
     	for(int i=0; i<20; i++){
+		   n += i;
 		  cout << datax[i] - 0.5 << datay[i] + 0.5;
 		  cout << datax[i] << " " << datay[i] << " " << endl;	
 	}
@@ -56,7 +57,7 @@ int main(){
 	float psi = 0.005;
 	float da = 0.01;
 	float db = 0.01;
-	float a1 = 3, b1 = 10;
+	float a1 = 2, b1 = 0;
 	while (EE(a0, b0, a1, b1) > eta && iteration < 1000000) {
 		a0 = a1;
 		b0 = b1;
